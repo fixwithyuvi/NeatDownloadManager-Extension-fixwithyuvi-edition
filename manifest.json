@@ -1,0 +1,71 @@
+{
+   "action": {
+      "default_icon": {
+         "16": "img/icon16.png"
+      }
+   },
+   "author": "Javad Motallebi",
+   "background": {
+      "service_worker": "bg.js"
+   },
+   "content_scripts": [
+      {
+         "all_frames": true,
+         "js": [
+            "ct.js"
+         ],
+         "matches": [
+            "http://*/*",
+            "https://*/*"
+         ],
+         "run_at": "document_start"
+      }
+   ],
+   "description": "Sends Download Links to Neat Download Manager. fixwithyuvi edition with a skip-sites list.",
+   "homepage_url": "https://www.neatdownloadmanager.com/",
+   "host_permissions": [
+      "<all_urls>"
+   ],
+   "icons": {
+      "128": "img/icon128.png",
+      "16": "img/icon16.png",
+      "48": "img/icon48.png"
+   },
+   "manifest_version": 3,
+   "name": "NeatDownloadManager Extension - fixwithyuvi edition",
+   "permissions": [
+      "webRequest",
+      "webNavigation",
+      "cookies",
+      "contextMenus",
+      "storage",
+      "downloads"
+   ],
+   "version": "1.9.94",
+   "web_accessible_resources": [
+      {
+         "matches": [
+            "<all_urls>"
+         ],
+         "resources": [
+            "img/icon16.png",
+            "img/icon16_2x.png",
+            "img/close16.png",
+            "img/close16_2x.png"
+         ]
+      }
+   ],
+   "options_ui": {
+      "page": "options.html",
+      "open_in_tab": true
+   },
+   "version_name": "1.9.94 fixwithyuvi edition",
+   "commands": {
+      "toggle-skip": {
+         "suggested_key": {
+            "default": "Alt+Shift+S"
+         },
+         "description": "Skip / Resume NeatDownloadManager on this site"
+      }
+   }
+}
